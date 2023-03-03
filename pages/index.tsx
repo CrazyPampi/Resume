@@ -1,27 +1,10 @@
 import Head from "next/head";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Image from "next/image";
 import profile from "../public/profile.jpg";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { MdLocationOn, MdMail } from "react-icons/md";
 import { BsFillPhoneFill } from "react-icons/bs";
-
-const animateBefore = keyframes`
-    0%,100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(100vh);
-    }
-`;
-const animateAfter = keyframes`
-    0%,100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-100vh);
-    }
-`;
 
 const Main = styled.main`
   display: flex;
@@ -68,38 +51,6 @@ const Main = styled.main`
       @media screen and (max-width: 40rem) {
         text-align: justify;
       }
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: -20rem;
-      left: -10rem;
-      width: 40rem;
-      height: 40rem;
-      border-radius: 50%;
-      background: radial-gradient(
-        rgba(var(--primary-color), 0.175),
-        transparent,
-        transparent
-      );
-      animation: ${animateBefore} 15s infinite;
-      z-index: -1;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -20rem;
-      right: -10rem;
-      width: 40rem;
-      height: 40rem;
-      border-radius: 50%;
-      background: radial-gradient(
-        rgba(var(--secondary-color), 0.175),
-        transparent,
-        transparent
-      );
-      animation: ${animateAfter} 15s infinite;
-      z-index: -1;
     }
   }
   & .body-content {
@@ -233,10 +184,9 @@ const Main = styled.main`
           color: rgb(var(--dark-color), 0.75);
           & a {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             @media screen and (max-width: 40rem) {
-              flex-direction: column;
-              align-items: flex-start;
             }
             & h3 {
               padding: 0.5rem;
@@ -247,8 +197,8 @@ const Main = styled.main`
               }
             }
             & span {
+              padding: 0.5rem;
               @media screen and (max-width: 40rem) {
-                padding: 0.5rem;
               }
             }
           }
@@ -293,12 +243,12 @@ const Main = styled.main`
 `;
 
 const og = {
-  title: "SUBID DAS",
-  describedTitle: "RESUME of SUBID DAS",
+  title: "PAMPA DAS",
+  describedTitle: "RESUME of PAMPA DAS",
   description:
     "Resume-2023 is a visually stunning resume website built using Next.js, TypeScript, and Styled-Components.",
   image: profile.src,
-  url: "https://itsme-subid.vercel.app/",
+  url: "",
 };
 
 export default function Home() {
@@ -306,7 +256,10 @@ export default function Home() {
     <>
       <Head>
         <title>{og.title}</title>
-        <meta name="google-site-verification" content="aUOx7BZBGMEAbtDsLf9bN1BvycMZwahF4zDqu0EtQCw" />
+        <meta
+          name="google-site-verification"
+          content="aUOx7BZBGMEAbtDsLf9bN1BvycMZwahF4zDqu0EtQCw"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -327,8 +280,8 @@ export default function Home() {
             "name": ${og.describedTitle},
             "url": ${og.url},
             "sameAs": [
-              "https://www.instagram.com/itsme_subid/",
-              "https://twitter.com/ItsmeSubid"
+              "https://www.instagram.com/itsme_PAMPA/",
+              "https://twitter.com/ItsmePAMPA"
             ],
             "logo": {
               "@type": "ImageObject",
@@ -338,7 +291,7 @@ export default function Home() {
               "contentUrl": ${og.image},
               "width": 1000,
               "height": 1000,
-              "caption": "itsme-Subid"
+              "caption": "itsme-PAMPA"
             },
             "image": { "@id": ${og.url} }
           },
@@ -370,8 +323,8 @@ export default function Home() {
         <meta property="twitter:title" content={og.describedTitle} />
         <meta property="twitter:description" content={og.description} />
         <meta property="twitter:image" content={og.image} />
-        <meta name="twitter:site" content="@itsme-Subid" />
-        <meta name="twitter:creator" content="@itsme-Subid" />
+        <meta name="twitter:site" content="@itsme-PAMPA" />
+        <meta name="twitter:creator" content="@itsme-PAMPA" />
         <meta name="theme-color" content="#fff" />
         <meta name="next-head-count" content="26" />
       </Head>
@@ -385,14 +338,16 @@ export default function Home() {
             alt=""
           />
           <div className="dev">
-            <h1>SUBID DAS</h1>
-            <h2>Full-Stack Web Developer</h2>
+            <h1>PAMPA DAS</h1>
+            <h2>SANSKRIT TEACHER</h2>
             <p>
-              I{"'"}m a Full-Stack Developer specializing in the MERN Stack with
-              typescript, with a particular focus on Frontend development. I
-              {"'"}m an enthusiastic and passionate self-taught learner, always
-              striving to learn and apply new technologies. I have the drive and
-              ambition to succeed and is not afraid of hard work and dedication.
+              Dedicated and passionate Sanskrit tutor with experience in
+              teaching students of all levels. Known for making the subject
+              matter accessible and engaging for students, with a focus on
+              building their confidence and interest in Sanskrit. Skilled in
+              creating lesson plans, implementing teaching strategies, and
+              evaluating student progress. Committed to providing a positive and
+              enriching learning experience for all students.
             </p>
           </div>
         </div>
@@ -405,20 +360,22 @@ export default function Home() {
               <ul>
                 <li>
                   <a
-                    href="mailto:itsmesubid@gmail.com"
+                    href="mailto:pampad525@gmail.com"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <MdMail />
-                    <span>itsmesubid@gmail.com</span>
+                    <span>pampad525@gmail.com</span>
                   </a>
                 </li>
+
                 <li>
-                  <a href="tele:+918902175210" target="_blank" rel="noreferrer">
+                  <a href="tele:+97044341986" target="_blank" rel="noreferrer">
                     <BsFillPhoneFill />
-                    <span>+91 890 217 5210</span>
+                    <span>+91 7044341986</span>
                   </a>
                 </li>
+
                 <li>
                   <a>
                     <MdLocationOn />
@@ -427,22 +384,12 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/itsme-Subid"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaGithub />
-                    <span>github.com/itsme-Subid</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://linkedin.com/in/itsme-subid"
+                    href="https://www.linkedin.com/in/pampadas"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <FaLinkedin />
-                    <span>linkedin.com/in/itsme-subid</span>
+                    <span>linkedin.com/in/pampadas</span>
                   </a>
                 </li>
               </ul>
@@ -452,13 +399,20 @@ export default function Home() {
                 <span>Skills</span>
               </h2>
               <ul>
-                <li>Next.js</li>
-                <li>React.js</li>
-                <li>Styled-Components</li>
-                <li>Tailwind CSS</li>
-                <li>Bootstrap</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
+                <li>Strong proficiency in Sanskrit language and literature.</li>
+                <li>
+                  Effective communication skills in Bengali, Hindi, and English.
+                </li>
+                <li>
+                  Ability to inspire and motivate students to learn and succeed.
+                </li>
+                <li>
+                  Adaptable and flexible teaching style to cater to diverse
+                  student needs.
+                </li>
+                <li>Strong organizational and planning skills.</li>
+                <li>HTML</li>
+                <li>Nationl JUDO player.</li>
               </ul>
             </div>
             <div className="languages">
@@ -466,110 +420,33 @@ export default function Home() {
                 <span>Languages</span>
               </h2>
               <ul>
-                <li>Typescript</li>
-                <li>Javascript</li>
-                <li>C/C++</li>
+                <li>Sanskrit</li>
+                <li>Bengali</li>
+                <li>Hindi</li>
+                <li>English</li>
               </ul>
             </div>
           </aside>
           <div className="others">
-            <div className="projects">
+            <div className="education">
               <h2>
-                <span>Projects</span>
+                <span>Experience</span>
               </h2>
-              <ul>
+              <ul className="education-list">
                 <li>
-                  <a
-                    href="https://webinrush.vercel.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <h3>WebInRush</h3> <span>(12/2022 - Present)</span>
+                  <a>
+                    <h3>Private Tutor</h3> <span>Sanskrit</span>{" "}
+                    <span>(2017 - Present)</span>
                   </a>
                   <div className="description">
                     <p>
-                      Developed and launched a full-stack web application called
-                      WebInRush using Next.js, TypeScript, Styled-Components,
-                      Formik, NextAuth, Mongoose, and MongoDB. The platform
-                      allows users to sign up and place orders for custom
-                      websites, and talk to the Developers.
+                      Develop and implement customized lesson plans for students
+                      of all levels.
                     </p>
-                    <div className="skills-used">
-                      {[
-                        "Next.js",
-                        "TypeScript",
-                        "Styled-Components",
-                        "Framer-Motion",
-                        "Material-UI",
-                        "Formik",
-                        "NextAuth",
-                        "Mongoose",
-                        "MongoDB",
-                      ].map((skill) => (
-                        <span key={skill}>{skill}</span>
-                      ))}
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <a
-                    href="https://infotech-success-point.vercel.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <h3>Infotech Success Point</h3>{" "}
-                    <span>(12/2022 - 01/2023)</span>
-                  </a>
-                  <div className="description">
                     <p>
-                      Created and designed a responsive front-end web
-                      application for Infotech Success Point using Next.js,
-                      TypeScript and Styled-Components, Framer-motion,
-                      Material-UI. The platform displays various web
-                      development, web design, and digital marketing courses,
-                      offering a visually appealing and user-friendly browsing
-                      experience.
+                      Foster a positive and engaging learning environment. Track
+                      and evaluate student progress.
                     </p>
-                    <div className="skills-used">
-                      {[
-                        "Next.js",
-                        "TypeScript",
-                        "Styled-Components",
-                        "Framer-Motion",
-                        "Material-UI",
-                      ].map((skill) => (
-                        <span key={skill}>{skill}</span>
-                      ))}
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <a
-                    href="https://movie108.vercel.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <h3>Movie108</h3> <span>(10/2022 - 11/2022)</span>
-                  </a>
-                  <div className="description">
-                    <p>
-                      Developed and implemented a full-stack web application
-                      using React.js, Styled-Components, Node.js, Express.js,
-                      and MongoDB. The platform, called Movie108, allows users
-                      to sign up, add their reviews and ratings for movies, and
-                      view reviews of any movie on the site.
-                    </p>
-                    <div className="skills-used">
-                      {[
-                        "React.js",
-                        "Styled-Components",
-                        "Node.js",
-                        "Express.js",
-                        "MongoDB",
-                      ].map((skill) => (
-                        <span key={skill}>{skill}</span>
-                      ))}
-                    </div>
                   </div>
                 </li>
               </ul>
@@ -581,16 +458,34 @@ export default function Home() {
               <ul className="education-list">
                 <li>
                   <a>
-                    <h3>Surendranath Vidyaniketan</h3> <span>12th Boards</span>{" "}
-                    <span>(09/2021 - Present)</span>
+                    <h3>The Sanskrit College and University, Kolkata</h3>{" "}
+                    <span>Master of Arts in Sanskrit</span>{" "}
+                    <span>2022 (Percentage: 80)</span>
                   </a>
-                  <div className="description">
-                    <p>
-                      It{"'"}s a Government school in Kolkata, India. It is
-                      affiliated to the West Bengal Council of Higher Secondary
-                      Education.
-                    </p>
-                  </div>
+                </li>
+
+                <li>
+                  <a>
+                    <h3>University of Burdwan, West Bengal</h3>{" "}
+                    <span>Bachelor of Arts in Sanskrit Honours</span>{" "}
+                    <span>2020 (Percentage: 61)</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a>
+                    <h3>West Bengal Council of Higher Secondary Education</h3>{" "}
+                    <span>Higher Secondary Examination (XII)</span>{" "}
+                    <span>2017 (Percentage: 72)</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a>
+                    <h3>West Bengal Board of Secondary Education 2015</h3>{" "}
+                    <span>Madhyamik Pariksha (X)</span>{" "}
+                    <span>(Percentage: 50.42)</span>
+                  </a>
                 </li>
               </ul>
             </div>
